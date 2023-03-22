@@ -2,12 +2,14 @@ import React, { useEffect } from "react";
 import { useQuery } from "@apollo/client";
 
 import ProductItem from "../ProductItem";
-import { useStoreContext } from "../../utils/GlobalState";
-import { UPDATE_PRODUCTS } from "../../utils/actions";
 import { QUERY_PRODUCTS } from "../../utils/queries";
 import spinner from "../../assets/spinner.gif";
 
+import { useStoreContext } from "../../utils/GlobalState";
+import { UPDATE_PRODUCTS } from "../../utils/actions";
+
 function ProductList() {
+  console.log("ProductList");
   const [state, dispatch] = useStoreContext();
 
   const { currentCategory } = state;

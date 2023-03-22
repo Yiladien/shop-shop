@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {
   ApolloClient,
   InMemoryCache,
@@ -37,6 +37,7 @@ const client = new ApolloClient({
 });
 
 function App() {
+  console.log("App");
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -44,12 +45,24 @@ function App() {
           <StoreProvider>
             <Nav />
             <Switch>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/orderHistory" element={<OrderHistory />} />
-              <Route path="/products/:id" element={<Detail />} />
-              <Route path="*" element={<NoMatch />} />
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/login">
+                <Login />
+              </Route>
+              <Route path="/signup">
+                <Signup />
+              </Route>
+              <Route path="/orderHistory">
+                <OrderHistory />
+              </Route>
+              <Route path="/products/:id">
+                <Detail />
+              </Route>
+              <Route path="*">
+                <NoMatch />
+              </Route>
             </Switch>
           </StoreProvider>
         </div>

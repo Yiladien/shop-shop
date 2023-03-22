@@ -3,6 +3,8 @@ import ProductList from "../components/ProductList";
 import CategoryMenu from "../components/CategoryMenu";
 
 const Home = () => {
+  console.log("Home");
+
   return (
     <div className="container">
       <CategoryMenu />
