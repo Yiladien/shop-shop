@@ -12,7 +12,6 @@ import { UPDATE_PRODUCTS } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 
 function ProductList() {
-  console.log("ProductList");
   const [state, dispatch] = useStoreContext();
 
   const { currentCategory } = state;

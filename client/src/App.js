@@ -16,6 +16,7 @@ import Signup from "./pages/Signup";
 import Nav from "./components/Nav";
 import { StoreProvider } from "./utils/GlobalState";
 import OrderHistory from "./pages/OrderHistory";
+import Success from "./pages/Success";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -37,7 +38,6 @@ const client = new ApolloClient({
 });
 
 function App() {
-  console.log("App");
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -53,6 +53,9 @@ function App() {
               </Route>
               <Route path="/signup">
                 <Signup />
+              </Route>
+              <Route path="/success">
+                <Success />
               </Route>
               <Route path="/orderHistory">
                 <OrderHistory />

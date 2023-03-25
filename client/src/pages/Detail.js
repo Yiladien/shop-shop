@@ -19,7 +19,6 @@ import Cart from "../components/Cart";
 import { idbPromise } from "../utils/helpers";
 
 function Detail() {
-  console.log("Detail");
   const [state, dispatch] = useStoreContext();
   const { id } = useParams();
 
